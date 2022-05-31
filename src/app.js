@@ -3,6 +3,8 @@ const express = require('express')
 //Partial templates para los headers o footers (que se emplearán a lo largo de todas las páginas de la web para darle una unificación)
 const hbs = require('hbs')
 
+const port = process.env.PORT || 3000 //el puerto de una variable de entorno (environment variable) facilitado por heroku o en su defecto el local 3000
+
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
@@ -134,6 +136,6 @@ app.get('*', (req, res) => {
 //app.com/help
 //app.com/about
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.') //no se para si no lo cerramos nosotros intencionalmente, se queda abierto a la espera de peticiones ---Cntrl+c para pararlo
+app.listen(port, () => {
+    console.log('Server is up on port ' + port) //no se para si no lo cerramos nosotros intencionalmente, se queda abierto a la espera de peticiones ---Cntrl+c para pararlo
 }) //puerto, función cuando se establece conexión correctamente
