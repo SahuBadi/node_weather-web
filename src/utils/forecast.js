@@ -36,7 +36,7 @@ const forecast = (latitude, longitude, callback) => {
             callback(undefined, {
                 locationName: body.location.name,
                 country: body.location.country,
-                temperature: body.current.temperature,
+                temperature: body.current.temperature + '°C, descripción del estado del tiempo: ',
                 description: body.current.weather_descriptions[0]
             })
         }

@@ -31,14 +31,14 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather App',
+        title: 'App del Tiempo',
         name: 'Mª Delia Sahuquillo'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Weather App',
+        title: 'Sobre nuestra página',
         name: 'Mª Delia Sahuquillo'
     })
 })
@@ -46,7 +46,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         helpquest: 'pregunta',
-        title: 'Help',
+        title: 'Ayuda',
         name: 'Mª Delia Sahuquillo'
     })
 })
@@ -104,17 +104,17 @@ app.get('/weather', (req, res) => {
 
 //Query string endpoint donde aceptaremos la dirección de donde beberemos los datos
 // Segunda url que nos traerá datos json
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must provide a search term.'
-        })
-    }
-    console.log(req.query.search)
-    res.send({
-        products: []
-    })
-})
+// app.get('/products', (req, res) => {
+//     if (!req.query.search) {
+//         return res.send({
+//             error: 'You must provide a search term.'
+//         })
+//     }
+//     console.log(req.query.search)
+//     res.send({
+//         products: []
+//     })
+// })
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
